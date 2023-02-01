@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Evan</title>
-    <!--<link href="css/default.css" rel="stylesheet" />-->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/default.css" rel="stylesheet" />
 </head>
 <body>
     <img src="images/IMG_1374.jpg" width="400" height="500" />
@@ -20,17 +20,17 @@
     <h3>Grade Calculator</h3>
     <form>
         <label>Assignments:</label>
-        <input /><br />
+        <input id="assig" type="number" min="0" max="100" step="5" autofocus/><br />
         <label>Group Project:</label>
-        <input /><br />
+        <input id="gp" type="number" min="0" max="100" step="5" /><br />
         <label>Quizzes:</label>
-        <input /><br />
+        <input id="quiz" type="number" min="0" max="100" step="5" /><br />
         <label>Midterm Exam:</label>
-        <input /><br />
+        <input id="me" type="number" min="0" max="100" step="5" /><br />
         <label>Final Exam:</label>
-        <input /><br />
+        <input id="fe" type="number" min="0" max="100" step="5" /><br />
         <label>INTEX:</label>
-        <input /><br />
+        <input id="intex" type="number" min="0" max="100" step="5" /><br />
         <input id="btnSend" type="button" value="Submit" />
     </form>
 

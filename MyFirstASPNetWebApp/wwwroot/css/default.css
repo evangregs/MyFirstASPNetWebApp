@@ -1,8 +1,12 @@
 ﻿body {
-    font-family:'Baskerville Old Face'
+    font-family:'Baskerville Old Face';
 }
 
-label {
+input {
+    cursor: none;
+}
+
+/*label {
     font-size: 20px;
     color: brown;
-}
+}*/
