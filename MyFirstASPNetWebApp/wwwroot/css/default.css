@@ -1,12 +1,17 @@
 ﻿body {
     font-family:'Baskerville Old Face';
+    background-color:indianred;
+    color:beige;
 }
 
-input {
-    cursor: none;
+.center h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/*label {
-    font-size: 20px;
-    color: brown;
-}*/

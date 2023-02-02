@@ -2,15 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Evan</title>
+    <title>Monkey Business</title>
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/default.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="images/furry.jpg">
 </head>
 <body>
+    <div>
+        <h1>Hi! My preferred name is Evan</h1>
+    </div>
     <img src="images/IMG_1374.jpg" width="400" height="500" />
 
-    <h1>My deepest hopes and desires from IS 413: </h1>
-    <p>I hope to gain knowledge and experience from this class that I can carry forward into my life. </p>
+    <div class="center">
+        <h1>My deepest hopes and desires from IS 413: </h1>
+        <p>
+            I hope to gain knowledge and experience from this class that I can carry forward into my life.
+            I love being creative and so it's really fun to learn how to creatively implement these new tools in functional ways.
+        </p>
+    </div>
     <p>My top 3 career choices:</p>
     <ol>
         <li>Entrepreneur</li>
@@ -18,24 +27,27 @@
         <li>Rare artifact appraiser</li>
     </ol>
     <h3>Grade Calculator</h3>
+    <h3 id="letters">What's it gonna be??</h3>
     <form>
         <label>Assignments:</label>
-        <input id="assig" type="number" min="0" max="100" step="5" autofocus/><br />
+        <input id="assignments" type="number" min="0" max="100" step="5" autofocus /><br />
         <label>Group Project:</label>
-        <input id="gp" type="number" min="0" max="100" step="5" /><br />
+        <input id="groupProject" type="number" min="0" max="100" step="5" /><br />
         <label>Quizzes:</label>
         <input id="quiz" type="number" min="0" max="100" step="5" /><br />
         <label>Midterm Exam:</label>
-        <input id="me" type="number" min="0" max="100" step="5" /><br />
+        <input id="midtermExam" type="number" min="0" max="100" step="5" /><br />
         <label>Final Exam:</label>
-        <input id="fe" type="number" min="0" max="100" step="5" /><br />
+        <input id="finalExam" type="number" min="0" max="100" step="5" /><br />
         <label>INTEX:</label>
         <input id="intex" type="number" min="0" max="100" step="5" /><br />
-        <input id="btnSend" type="button" value="Submit" />
+        <input id="btnSend" type="button" value="Submit" /><br />
     </form>
 
+
+    <script src="js/hailMary.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/jquery/jquery-3.6.3.min.js"></script>
-    <script src="js/gc.js"></script>
+
 </body>
 </html>
