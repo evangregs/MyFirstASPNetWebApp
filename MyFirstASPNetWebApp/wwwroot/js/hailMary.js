@@ -1,47 +1,56 @@
-﻿/* initialize final grade variable */
-var finalGrade = 'Hello';
+﻿
+// this is the function that initiates when someone clicks the submit button
+$("#btnSend").click(function () {
+    // assign the user input values to variables for convenience and multiply by the syllabus weight
+    let assignments = parseInt($("#assignments").val()) * .5
+    let groupProject = parseInt($("#groupProject").val()) * .1
+    let quiz = parseInt($("#quiz").val()) * .1
+    let midtermExam = parseInt($("#midtermExam").val()) * .1
+    let finalExam = parseInt($("#finalExam").val()) * .1
+    let intex = parseInt($("#intex").val()) * .1
 
-/* this is the button click event handler that contains the logic to evaluate and assign the final letter grade. i know it looks
-    really messy, but this was the only way that i could get it to work. for some reason when i tried to use variable assignments 
-    and conventional things to make it look nice, the computer would freak out on me. it looks complicated, but it's actually pretty
-    simple in its functionality. it's just taking the inputed values, doing a calculation with the weights and then evaluating the 
-    result to assign the correct letter grade. */
-document.getElementById("btnSend").addEventListener("click", function () {
-    if (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 94) {
-        finalGrade = 'A';
+    // calculate total percentage grade 
+    let total = assignments + groupProject + quiz + midtermExam + finalExam + intex
+    let finalGrade = ''
+
+    // use if statements to assign appropriate letter grade 
+    if (total >= 94) {
+        finalGrade = 'A'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 94) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 90)) {
-        finalGrade = 'A-';
+    else if (total >= 90) {
+        finalGrade = 'A-'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 90) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 87)) {
-        finalGrade = 'B+';
+    else if (total >= 87) {
+        finalGrade = 'B+'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 87) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 84)) {
-        finalGrade = 'B';
+    else if (total >= 84) {
+        finalGrade = 'B'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 84) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 80)) {
-        finalGrade = 'B-';
+    else if (total >= 80) {
+        finalGrade = 'B-'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 80) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 77)) {
-        finalGrade = 'C+';
+    else if (total >= 77) {
+        finalGrade = 'C+'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 77) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 74)) {
-        finalGrade = 'C';
+    else if (total >= 74) {
+        finalGrade = 'C'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 74) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 70)) {
-        finalGrade = 'C-';
+    else if (total >= 70) {
+        finalGrade = 'C-'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 70) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 67)) {
-        finalGrade = 'D+';
+    else if (total >= 67) {
+        finalGrade = 'D+'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 67) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 64)) {
-        finalGrade = 'D';
+    else if (total >= 64) {
+        finalGrade = 'D'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 64) && (((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) >= 60)) {
-        finalGrade = 'D-';
+    else if (total >= 60) {
+        finalGrade = 'D-'
     }
-    else if ((((parseInt(document.getElementById("assignments").value) * .5) + (parseInt(document.getElementById("groupProject").value) * .1) + (parseInt(document.getElementById("quiz").value) * .1) + (parseInt(document.getElementById("midtermExam").value) * .1) + (parseInt(document.getElementById("finalExam").value) * .1) + (parseInt(document.getElementById("intex").value) * .1)) < 60)) {
-        finalGrade = 'E';
+    else {
+        finalGrade = 'E'
     }
-    document.getElementById("letters").innerHTML = "Your final grade is... " + finalGrade;
+
+    // output the final letter grade to the html element of the "letters" class
+    $("#letters").html("Your final grade is: " + finalGrade)
 })
